@@ -1,0 +1,18 @@
+service: serverless-hello-world
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+
+plugins:
+  - serverless-webpack
+  - serverless-offline
+
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - http:
+          method: GET
+          path: hello
+          integration: lambda-proxy

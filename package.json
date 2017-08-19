@@ -1,0 +1,37 @@
+{
+  "name": "serverless-hello-world",
+  "version": "1.0.0",
+  "description": "Hello World as a Service",
+  "main": "handler.js",
+  "scripts": {
+    "install:offline": "docker pull lambci/lambda",
+    "setup": "serverless config credentials --provider aws --key KEY --secret SECRET",
+    "start": "serverless offline start -r us-east-1 --noTimeout --corsDisallowCredentials false",
+    "deploy": "serverless deploy --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/donavon/serverless-hello-world.git"
+  },
+  "keywords": [
+    "serverless",
+    "hello",
+    "world"
+  ],
+  "author": "Donavon West <github@donavon.com> (http://donavon.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/donavon/serverless-hello-world/issues"
+  },
+  "homepage": "https://github.com/donavon/serverless-hello-world#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.1",
+    "babel-preset-node6": "^11.0.0",
+    "babel-preset-stage-2": "^6.24.1",
+    "serverless-offline": "^3.15.3",
+    "serverless-webpack": "^2.2.0",
+    "webpack": "^3.5.5",
+    "webpack-node-externals": "^1.6.0"
+  }
+}
